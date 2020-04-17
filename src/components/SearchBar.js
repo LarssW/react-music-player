@@ -1,5 +1,4 @@
 import React from 'react';
-
 class SearchBar extends React.Component {
   state = {
     term: '',
@@ -17,10 +16,15 @@ class SearchBar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-sm bg-white navbar-dark">
-        <div className="container">
-          <form className="form-inline" onSubmit={this.onFormSubmit}>
-            <input className="form-control mr-sm-2" value={this.state.term} onChange={this.onInputChange} type="text" placeholder="Search" />
-            <button className="btn btn-success" type="submit">Search</button>
+        <div className="container text-center">
+          <h3 className="navbar-brand text-dark" href="/#">React Music Player</h3>
+          <form className="form-inline text-center" onSubmit={this.onFormSubmit}>
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Search" value={this.state.term} onChange={this.onInputChange} />
+              <div className="input-group-append">
+                <button className="btn btn-outline-secondary" type="submit">Go</button>
+              </div>
+            </div>
           </form>
         </div>
       </nav>
