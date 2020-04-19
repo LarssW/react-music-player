@@ -5,7 +5,7 @@ class VideoList extends Component {
 
   renderItems = () => {
     return this.props.videos.map((item, index) => {
-      return <VideoItem video={item} key={index} />
+      return <VideoItem video={item} key={index} onSelectVideo={this.props.onSelectVideo} />
     });
   }
 
