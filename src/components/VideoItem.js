@@ -5,14 +5,19 @@ const VideoItem = ({ video, onSelectVideo }) => {
     return <div>Loading</div>
   }
   return (
-    <div onClick={() => onSelectVideo(video)}>
+    <div onClick={() => onSelectVideo(video)} style={{
+      display: 'flex',
+      flexDirection: 'row',
+      marginBottom: 20,
+      cursor: 'pointer'
+    }}>
       <img
         src={video.snippet.thumbnails.medium.url}
         alt={video.snippet.title}
-        width={video.snippet.thumbnails.medium.width}
+        width="60%"
         height={video.snippet.thumbnails.medium.height}
       />
-      <div>{video.snippet.title}</div>
+      <h5 style={{ paddingLeft: 10 }}>{video.snippet.title}</h5>
     </div>
   )
 }
